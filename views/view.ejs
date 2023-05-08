@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+    *{
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }  
+    .py-5 {
+        padding-top: 3rem!important;
+        padding-bottom: 3rem!important;
+    }
+    .py-3 {
+        padding-top: 1rem!important;
+        padding-bottom: 1rem!important;
+    }
+    .p-4 {
+        padding: 1.5rem!important;
+    }
+    .text-secondary{
+        color: rgb(108,117,125);
+    }
+    .container{
+        padding: 0 10px;
+        max-width: 1320px;
+        margin: 0 auto;
+    }
+    body{
+        background-color: #f4f9fd;
+        font-family: system-ui,-apple-system,"Segoe UI";
+    }
+    .bg-white{
+        background-color: #fff;
+    }
+    .news-inner{
+        grid-template-columns: repeat(3, minmax(200px, 1fr));
+        display: grid;
+        column-gap: 25px;
+    }
+    .news-box{
+        transition: 0.4s all;
+    }
+    .news-box:hover{
+        transform: translateY(-10px);
+    }
+    .news-box h4{
+        font-weight: 700;
+        transition: 0.4s all;
+    }
+    .news-box:hover h4{
+        color: #19ce67;
+    }
+    .news-box p{
+        line-height: 33px;
+    }
+    .news-box a{
+        color: #19ce67;
+        font-weight: 500;
+        transition: 0.4s all;
+    }
+    .news-box a:hover{
+        color: #121521;
+    }
+    </style>
+</head>
+<body>
+    <section class="news py-5">
+        <div class="container">
+            <div class="news-inner">
+                <% for(var i of record) { %>
+                    <div class="news-box bg-white" style="margin-bottom: 2rem;">
+                        <img src="<%= i.avatar %>" name="avatar" width="100%">
+                        <div class="p-4">
+                            <p style="font-size: 14px;" class="mb-0"><%= i.name %> &nbsp; | &nbsp; <%= i.category %> &nbsp; | &nbsp; <%= i.date %></p>
+                            <h1 class="py-3 mb-0"><%= i.title %></h1>
+                            <% var a = i.description %>
+                            <% var shortDis = a.slice(0,140)+"..." %>
+                            <p class="text-secondary" style="margin-bottom: 1rem;"><%= shortDis %></p>
+                            <a href="/viewMore/<%= i.id %>">Read More</a>
+                        </div>  
+                    </div>
+                <% } %>
+            </div>
+        </div>
+    </section>
+</body>
+</html>

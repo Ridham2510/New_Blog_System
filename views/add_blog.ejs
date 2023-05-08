@@ -1,0 +1,41 @@
+<a href="viewData">Show</a>
+
+
+<form action="/insertData" method="post" enctype="multipart/form-data">
+    <table border="1">
+        <tr>
+            <td>Enter Your Blog Title :-</td>
+            <td><input type="text" name="title"></td>
+        </tr>
+        <tr>
+            <td>Enter Your Blog Category :-</td>
+            <td><select name="category">
+                <option value="">--Select Category--</option>
+                <option value="Politices">Politices</option>
+                <option value="Sports">Sports</option>
+                <option value="News">News</option>
+                <option value="Movies">Movies</option>
+            </select></td>
+        </tr>
+        <tr>
+            <td>Enter Your Name :-</td>
+            <td><input type="text" name="name"></td>
+        </tr>
+        <tr>
+            <td>Enter Select Blog Date :-</td>
+            <td><input type="date" name="date"></td>
+        </tr>
+        <tr>
+            <td>Enter Your Blog Description :-</td>
+            <td><textarea cols="30" rows="10" name="description"></textarea></td>
+        </tr>
+        <tr>
+            <td>Choose Your Image :-</td>
+            <td><input type="file" name="avatar"></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td><input type="submit" value="submit" name="submit"></td>
+        </tr>
+    </table>
+</form>
